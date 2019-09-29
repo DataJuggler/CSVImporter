@@ -93,8 +93,8 @@ namespace CSVImporter
                         // Iterate the collection of Word objects
                         foreach (Word word in words)  
                         { 
-                            // remove any spaces from the column name
-                            word.Text = word.Text.Replace(" ", "").Replace("(", "").Replace(")", "").Replace(".", "").Replace("_", "");
+                            // remove any spaces and special characters from the column names. This may have to be modified as more files are tested.
+                            word.Text = word.Text.Replace(" ", "").Replace("(", "").Replace(")", "").Replace(".", "").Replace("_", "").Replace("<", "").Replace(">", "");
 
                             // Start on a new line
                             sb.Append(Environment.NewLine);
@@ -106,7 +106,7 @@ namespace CSVImporter
                             sb.Append(Environment.NewLine);
 
                             // replace out the text of the template
-                            alterTable = alterTableTemplate2.Replace("[ColumnName]", word.Text);
+                            alterTable = alterTableTemplate2.Replace("[ColumnName]", TextHelper.CapitalizeFirstChar(word.Text));
 
                              // add this one
                             sb.Append(alterTable);
@@ -334,6 +334,12 @@ namespace CSVImporter
                 // If the rawImport object exists and both lists exist
                 if ((NullHelper.Exists(rawImport)) && (ListHelper.HasOneOrMoreItems(words)))
                 {
+                    // this is a working sample built for importing the Pfilerr.csv file included in the Data folder.
+                    // To create this for your project, after you create your table and build a data-tier
+                    // with DataTier.Net, open this query and find your TableId in the DTNTable
+                    // for the table you created in Step 1
+                    // Then Open the Query SetFieldValues and run it
+
                     // set each property
                     rawImport.AuthorizedOfficialCredentialText = words[313].Text;
                     rawImport.AuthorizedOfficialFirstName = words[43].Text;

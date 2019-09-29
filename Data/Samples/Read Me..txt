@@ -1,0 +1,16 @@
+The first sample NYSE is a sample from the website www.eoddata.com.
+
+This is a great resource for end of day stock data. It is free if you sign up and you can download about 4 weeks of data, and they also sell
+historyical data for as far back as 20 years.
+
+I only included 1 day from my account as a sample, so I would not think they would mind in exchange for the plug I just gave them.
+
+The second sample pfilerr.csv is the reason this project exists, as I was answering a Stack Overflow question about CSVHelper, a project
+I heard of yesterday for the first time. I have never used CSVHelper, so I cannot say anything about it either way.
+
+It has probably been tested a 1,000 times more than this project as I built this in the last 24 hours.
+
+The purpose of this project is to show how DataTier.Net can be used in Conjunction with this project to do some things that you 
+can't do with Entity Framework, such as the SetFieldValues.sql, which create C# code to set in your import project just by 
+reading the DTNFields for your table.
+
