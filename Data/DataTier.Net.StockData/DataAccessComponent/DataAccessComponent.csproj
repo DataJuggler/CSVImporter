@@ -39,10 +39,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DataJuggler.Core.UltimateHelper, Version=1.3.9.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\DataJuggler.Core.UltimateHelper.1.3.9\lib\net461\DataJuggler.Core.UltimateHelper.dll</HintPath>
+      <HintPath>..\packages\DataJuggler.Core.UltimateHelper.1.3.9\lib\net461\DataJuggler.Core.UltimateHelper.dll</HintPath>
     </Reference>
     <Reference Include="DataJuggler.Net, Version=5.7.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\DataJuggler.Net.5.7.0\lib\net461\DataJuggler.Net.dll</HintPath>
+      <HintPath>..\packages\DataJuggler.Net.5.7.0\lib\net461\DataJuggler.Net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -58,24 +58,16 @@
     <Compile Include="DataManager\DataHelper.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DataManager\RawImportManager.cs" />
-    <Compile Include="DataManager\Readers\RawImportReader.cs" />
     <Compile Include="DataManager\SqlParameterHelper.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DataManager\DataManager.cs" />
     <Compile Include="DataManager\Readers\TemporaryReader.cs" />
-    <Compile Include="DataManager\Writers\RawImportWriter.cs" />
-    <Compile Include="DataManager\Writers\RawImportWriterBase.cs" />
     <Compile Include="DataManager\Writers\TemporaryWriter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataManager\DataConnector.cs" />
-    <Compile Include="StoredProcedureManager\DeleteProcedures\DeleteRawImportStoredProcedure.cs" />
     <Compile Include="StoredProcedureManager\DeleteProcedures\TemporaryDeleteProcedure.cs" />
-    <Compile Include="StoredProcedureManager\FetchProcedures\FetchAllRawImportsStoredProcedure.cs" />
-    <Compile Include="StoredProcedureManager\FetchProcedures\FindRawImportStoredProcedure.cs" />
     <Compile Include="StoredProcedureManager\FetchProcedures\TemporaryFetchProcedure.cs" />
-    <Compile Include="StoredProcedureManager\InsertProcedures\InsertRawImportStoredProcedure.cs" />
     <Compile Include="StoredProcedureManager\InsertProcedures\TemporaryInsertProcedure.cs" />
     <Compile Include="StoredProcedureManager\StoredProcedure.cs">
       <SubType>Code</SubType>
@@ -87,7 +79,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="StoredProcedureManager\UpdateProcedures\TemporaryUpdateProcedure.cs" />
-    <Compile Include="StoredProcedureManager\UpdateProcedures\UpdateRawImportStoredProcedure.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data Juggler.ico" />
