@@ -88,6 +88,9 @@ namespace CSVImportManager
                     // If the textLines collection exists and has one or more items
                     if (ListHelper.HasOneOrMoreItems(textLines))
                     {
+                        // notify the callback to setup the Graph - table name is optional if you have more than one import
+                        callback(textLines.Count, "RawImport");
+
                         // change the RefreshRate
                         if (textLines.Count > 1000)
                         {
@@ -496,8 +499,6 @@ namespace CSVImportManager
             #endregion
 
         #endregion
-
-
 
     }
     #endregion

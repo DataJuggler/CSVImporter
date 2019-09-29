@@ -88,6 +88,13 @@ namespace CSVImportManager
                     // If the textLines collection exists and has one or more items
                     if (ListHelper.HasOneOrMoreItems(textLines))
                     {
+                        // If the callback object exists
+                        if (NullHelper.Exists(callback))
+                        {
+                            // notify the delegate to setup the Graph
+                            callback(textLines.Count, tableName);
+                        }
+
                         // change the RefreshRate
                         if (textLines.Count > 1000)
                         {

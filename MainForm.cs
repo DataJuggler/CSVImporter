@@ -210,7 +210,7 @@ namespace CSVImporter
                 // ******    Set The Expected Count Using The SQL Query **********
                 // ******    Use DataTier.Net.Database For This                  **********
                 // ********************************************************
-                int expectedCount = 0;
+                int expectedCount = 329;
 
                 // if the expectedCount is not set
                 if (expectedCount == 0)
@@ -224,6 +224,9 @@ namespace CSVImporter
                 {  
                     // save the records
                     int savedCount = CSVImportJob.ImportDataFromFile(fileName, tableName, expectedCount, ProgressCallback);
+
+                    // set to false
+                    Graph.Visible = false;
 
                     // Show a message as a test
                     MessageBoxHelper.ShowMessage("Successfully imported " + savedCount.ToString() + " records.", "Import Complete");
@@ -284,8 +287,6 @@ namespace CSVImporter
                     // show the Graph
                     Graph.Visible = true;
                 }
-
-                
 
                 // Update the UI
                 this.Refresh();

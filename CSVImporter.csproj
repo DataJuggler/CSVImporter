@@ -107,7 +107,7 @@
     <Folder Include="Tools\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Data\DataTier.Net.StockData\CSVImportManager\CSVImportManager.csproj">
+    <ProjectReference Include="Data\DataTier.Net.CSVImportSample\CSVImportManager\CSVImportManager.csproj">
       <Project>{6be2341f-50b0-4b8e-bdf5-fc9f0cc575c5}</Project>
       <Name>CSVImportManager</Name>
     </ProjectReference>
