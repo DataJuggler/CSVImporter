@@ -48,7 +48,6 @@
   <ItemGroup>
     <Compile Include="BusinessObjects\RawImport.business.cs" />
     <Compile Include="BusinessObjects\RawImport.data.cs" />
-    <Compile Include="BusinessObjects\TemporaryBusinessObject.cs" />
     <Compile Include="Enumerations\ObjectLibraryEnumerations.cs" />
     <Compile Include="Parsers\Parser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

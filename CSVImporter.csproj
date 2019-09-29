@@ -107,13 +107,9 @@
     <Folder Include="Tools\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Data\DataTier.Net.CSVImportSample\DataGateway\DataGateway.csproj">
-      <Project>{2a156c95-1b12-47fe-a2ea-cdf999d98817}</Project>
-      <Name>DataGateway</Name>
-    </ProjectReference>
-    <ProjectReference Include="Data\DataTier.Net.CSVImportSample\ObjectLibrary\ObjectLibrary.csproj">
-      <Project>{19158508-f27f-4340-aad4-10b4fbb54404}</Project>
-      <Name>ObjectLibrary</Name>
+    <ProjectReference Include="Tools\CSVImportManager\CSVImportManager.csproj">
+      <Project>{6be2341f-50b0-4b8e-bdf5-fc9f0cc575c5}</Project>
+      <Name>CSVImportManager</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessComponent", "Data
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectLibrary", "ObjectLibrary\ObjectLibrary.csproj", "{19158508-F27F-4340-AAD4-10B4FBB54404}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSVImportManager", "..\..\Tools\CSVImportManager\CSVImportManager.csproj", "{6BE2341F-50B0-4B8E-BDF5-FC9F0CC575C5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{19158508-F27F-4340-AAD4-10B4FBB54404}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19158508-F27F-4340-AAD4-10B4FBB54404}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19158508-F27F-4340-AAD4-10B4FBB54404}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BE2341F-50B0-4B8E-BDF5-FC9F0CC575C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BE2341F-50B0-4B8E-BDF5-FC9F0CC575C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BE2341F-50B0-4B8E-BDF5-FC9F0CC575C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BE2341F-50B0-4B8E-BDF5-FC9F0CC575C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
