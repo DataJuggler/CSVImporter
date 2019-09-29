@@ -28,6 +28,7 @@ namespace CSVImporter
     {
         
         #region Private Variables
+        private bool graphSetup;
         #endregion
         
         #region Constructor
@@ -196,6 +197,9 @@ namespace CSVImporter
             /// </summary>
             private void ImportDataButton_Click(object sender, EventArgs e)
             {
+                // reset
+                GraphSetup = false;
+
                 // set the fileName                
                 string fileName = SourceFileControl.Text;
 
@@ -206,7 +210,14 @@ namespace CSVImporter
                 // ******    Set The Expected Count Using The SQL Query **********
                 // ******    Use DataTier.Net.Database For This                  **********
                 // ********************************************************
-                int expectedCount = 329;
+                int expectedCount = 0;
+
+                // if the expectedCount is not set
+                if (expectedCount == 0)
+                {
+                    // Show the user a message
+                    MessageBoxHelper.ShowMessage("You must set the Expected Count in the ImportDataButton_Click event.", "Validation Failed");
+                }
                 
                 // if the fileName exists
                 if ((TextHelper.Exists(fileName)) && (File.Exists(fileName)))
@@ -256,8 +267,25 @@ namespace CSVImporter
             /// </summary>
             public void ProgressCallback(int progress, string tableName)
             {  
-                // setup the Graph
-                this.Graph.Value = progress;
+                // if the value for GraphSetup is true
+                if ((GraphSetup) && (progress <= Graph.Maximum))
+                {   
+                    // setup the Graph
+                    this.Graph.Value = progress;
+                }
+                else 
+                {
+                    // use this to set the Maximum
+                    Graph.Maximum = progress;
+
+                    // set to true
+                    GraphSetup = true;
+
+                    // show the Graph
+                    Graph.Visible = true;
+                }
+
+                
 
                 // Update the UI
                 this.Refresh();
@@ -289,15 +317,15 @@ namespace CSVImporter
 
         #region Properties
 
-        #region CreateParams
-        /// <summary>
-        /// This property here is what did the trick to reduce the flickering.
-        /// I also needed to make all of the controls Double Buffered, but
-        /// this was the final touch. It is a little slow when you switch tabs
-        /// but that is because the repainting is finishing before control is
-        /// returned.
-        /// </summary>
-        protected override CreateParams CreateParams
+            #region CreateParams
+            /// <summary>
+            /// This property here is what did the trick to reduce the flickering.
+            /// I also needed to make all of the controls Double Buffered, but
+            /// this was the final touch. It is a little slow when you switch tabs
+            /// but that is because the repainting is finishing before control is
+            /// returned.
+            /// </summary>
+            protected override CreateParams CreateParams
             {
                 get
                 {
@@ -313,6 +341,17 @@ namespace CSVImporter
             }
         #endregion
 
+            #region GraphSetup
+            /// <summary>
+            /// This property gets or sets the value for 'GraphSetup'.
+            /// </summary>
+            public bool GraphSetup
+            {
+                get { return graphSetup; }
+                set { graphSetup = value; }
+            }
+            #endregion
+            
         #endregion
 
     }
